@@ -24,6 +24,14 @@ class SavedPage extends StatelessWidget {
 }
 
 class CardDetail extends StatelessWidget {
+  final String imagePath;
+  final String heading;
+  final String subHeading;
+
+  CardItem(
+      {required this.imagePath,
+      required this.heading,
+      required this.subHeading});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -104,9 +112,11 @@ class CardItem extends StatelessWidget {
       elevation: 3.0,
       child: Column(
         children: [
-          Container(
-            color: Colors.grey,
+          Image.asset(
+            imagePath, // Path to your image asset
             height: 200.0,
+            width: double.infinity,
+            fit: BoxFit.cover,
           ),
           SizedBox(height: 10.0),
           Text(
