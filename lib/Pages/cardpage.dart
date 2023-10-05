@@ -1,96 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:innovation/Pages/savecrad.dart';
 
-class CardPageDetail extends StatelessWidget {
+class CustomCard extends StatefulWidget {
+  const CustomCard({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Card',
-              style: TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 50.0),
-            Row(
-              children: [
-                Expanded(
-                  child: CardItem(),
-                ),
-                Expanded(
-                  child: CardItem(),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CardItem(),
-                ),
-                Expanded(
-                  child: CardItem(),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CardItem(),
-                ),
-                Expanded(
-                  child: CardItem(),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CardItem(),
-                ),
-                Expanded(
-                  child: CardItem(),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: CardItem(),
-                ),
-                Expanded(
-                  child: CardItem(),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  State<CustomCard> createState() => _CustomCardState();
 }
 
-class CardPage extends StatelessWidget {
+class _CustomCardState extends State<CustomCard> {
+  final List<String> assetPaths = ['images/p4.jpg'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: Icon(Icons.account_circle),
-            onPressed: () {
-              // Perform action
-            },
-          ),
-        ],
+        backgroundColor: Colors.amber,
       ),
-      body: CardPageDetail(),
-      bottomNavigationBar: bottomAppbar(),
+      body: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: assetPaths.length,
+          itemBuilder: (BuildContext context, int index) {
+            final assetPath = assetPaths[index];
+            return Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Image.asset(
+                  assetPath,
+                  width: 300,
+                  height: 200,
+                  //fit: BoxFit.cover, //Adjust image fit
+                ));
+          }),
     );
   }
 }

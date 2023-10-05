@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SavedPage(),
-      routes: {'/cardpage': (context) => CardPage()},
+      routes: {'/cardpage': (context) => CustomCard()},
     );
   }
 }
