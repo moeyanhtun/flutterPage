@@ -59,7 +59,7 @@ flutter:
     - images/p1.webp
     - images/p2.webp
     - images/p3.webp
-    - images/p4.jpg
+    - images/p4.webp
 
   # To add assets to your application, add an assets section, like this:
   # assets:
