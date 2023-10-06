@@ -1,6 +1,7 @@
+import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
-class existingCard extends StatefulWidget {
+class addingNewProduct extends StatefulWidget {
   final String description;
   final String price;
   final String size;
@@ -8,7 +9,7 @@ class existingCard extends StatefulWidget {
   final String quantity;
   final String add;
 
-  const existingCard(
+  const addingNewProduct(
       {super.key,
       required this.description,
       required this.price,
@@ -18,10 +19,10 @@ class existingCard extends StatefulWidget {
       required this.add});
 
   @override
-  State<existingCard> createState() => _existingCardState();
+  State<addingNewProduct> createState() => _addingNewProductState();
 }
 
-class _existingCardState extends State<existingCard> {
+class _addingNewProductState extends State<addingNewProduct> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,15 +51,20 @@ class _existingCardState extends State<existingCard> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   const Text(
-                    "Heading",
+                    "Add a Heading",
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
                   ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.mode_edit_outlined,
-                        size: 30,
-                      )),
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors
+                          .transparent, // Change the background color here
+                    ),
+                    child: const Text(
+                      "Save",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -130,6 +136,17 @@ class _existingCardState extends State<existingCard> {
                         fontSize: 15, fontWeight: FontWeight.w700),
                   ),
                 ),
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 40),
+                  child: const Text(
+                    "Style Feed",
+                    style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
+                  ),
+                )
               ],
             )
           ],

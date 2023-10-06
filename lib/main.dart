@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:innovation/Pages/editingextingproduct.dart';
-import 'package:innovation/Pages/existingproduct.dart';
 
 // Import the CardPage widget
 
@@ -14,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: editingExtingProduct(
         description: "",
         price: "",

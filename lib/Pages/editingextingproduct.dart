@@ -26,6 +26,7 @@ class _editingExtingProductState extends State<editingExtingProduct> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 224, 224, 224),
         appBar: AppBar(
@@ -53,14 +54,15 @@ class _editingExtingProductState extends State<editingExtingProduct> {
                     "Heading",
                     style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
                   ),
-                  ElevatedButton(
+                  OutlinedButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(
+                    style: OutlinedButton.styleFrom(
                       backgroundColor: Colors
                           .transparent, // Change the background color here
                     ),
                     child: const Text(
                       "Save",
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ],
